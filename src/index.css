@@ -1,13 +1,396 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
+  padding: 0px;
+  background-image: url('./palmtrees.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  background-color: rgba(0,0,0,0);
+  transition: background-color 1s ease;
+
+}
+
+/*NAVBAR SECTION*/
+
+
+.nav-list {
+  
+  margin-top: 0px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  
+  padding-left: 0px;
+  list-style: none;
+  color: black;
+}
+
+/*nav animations*/ 
+.navitem{
+  opacity: 0;
+  
+}
+
+.nav1{
+  transform: translateX(-100px) scale(.95);
+  transition: 2.5s ease;
+}
+
+.nav2{
+  transform: translateX(-100px) scale(.95);
+  transition: 2s ease;
+}
+
+.nav3{
+  transform: translateX(-100px) scale(.95);
+  transition: 1.5s ease;
+}
+
+.nav4{
+  transform: translateX(-100px) scale(.95);
+  transition: 1s ease;
+}
+
+.nav5{
+  transform: translateX(-100px) scale(.95);
+  transition: .5s ease;
+}
+
+
+.active {
+  opacity: 1;
+  transform: translateX(0px) scale(1);
+}
+
+.nav-list a {
+  color: black;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.icon-list a {
+  color: black;
+}
+
+
+
+/*HOME SECTION*/
+.homeSection {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bigname {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  opacity: 0;
+  font-size: 100px;
+  transition: 4s;
+}
+
+
+h1, h2, h3, h4,li {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  
+}
+
+h4 {
+  margin: 15px;
+}
+
+img{
+  max-width: 250px;
+  width: 100%;
+  max-height: 250px;
+  border-radius: 5px;
+  
+}
+
+.icon-list {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 25px;
+}
+
+.icon-list li {
+  font-size: 25px;
+  list-style: none;
+  
+}
+
+/*icon animations*/
+.iconitem {
+  opacity: 0;
+  color: black;
+  
+}
+
+.icon1 {
+  color: black;
+  transform: translateX(100px) scale(.95);
+  transition: 2.5s ease;
+  
+}
+
+.icon2 {
+  color:black;
+  transform: translateX(100px) scale(.95);
+  transition: 1.5s ease;
+}
+
+.icon3 {
+  
+  color: black;
+  transform: translateX(100px) scale(.95);
+  transition: .5s ease;
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0px) scale(1);
+  
+}
+
+
+
+/* Music Player UI */
+.musicSection {
+  min-height: 100vh;
+}
+.c-player {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.c-player--details {
+  width: 40%;
+  text-align: center;
+}
+
+.song-artist {
+  color: white;
+  transition: color 2s;
+}
+
+.backward-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.play-btn {
+  width: 30px;
+  height: 30px;
+  margin: 0px 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.forward-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* List UI */
+.c-listUI {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0px;
+  padding-right: 10px;
+  
+}
+
+.c-listgroups {
+  width: 30%;
+  opacity: 0;
+}
+
+/*music page animations*/
+.c-listgroup1 {
+  transform: translateX(-100px) scale(.95);
+  transition: 1s ease;
+}
+
+.c-listgroup2 {
+  transform: translateX(100px) scale(.95);
+  transition: 1s ease;
+}
+
+/*details*/
+.c-player {
+  opacity: 0;
+  transform: translateY(100px) scale(.95);
+  transition: 2s ease;
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0px) scale(1);
+}
+
+
+
+
+
+.c-listgroup h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.innerlist {
+  
+  cursor: pointer;
+  height: 150px;
+  overflow: auto;
+  padding: 20px;
+  
+  
+  
+  
+  
+}
+
+.songlist {
+  padding: 5px 0px;
+  border-bottom: 1px solid rgb(182, 181, 181);
+  
+  margin: 0px;
+}
+
+/* YOUTUBE PLAYER */
+
+.c-youtube--section {
+  height: 100vh;
+}
+
+.c-youtube--wrapper {
+  overflow: hidden;
+  position: relative;
+  top: 25%;
+  width:60%;
+  margin: 0px auto;
+}
+
+.c-youtube--wrapper::after {
+  padding-top: 56.25%;
+  display: block;
+  content: '';
+}
+
+.c-youtube--wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*ABOUT SECTION*/
+.aboutSection {
+  height: 100vh;
+}
+
+
+
+/*CONTACT SECTION*/
+.contactSection{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 50%;
+}
+
+.contactSection h1 {
+  font-size: 35px;
+}
+
+input, textarea {
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+::placeholder{
+  color: white;
+}
+
+button {
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+  height: 30px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-item{
+  opacity: 0;
+}
+
+.c-item1{
+  transform: translateX(-100px) scale(.95);
+  transition: 1s ease;
+}
+
+.c-item2{
+  transform: translateX(100px) scale(.95);
+  transition: 1s ease;
+}
+
+.c-item3{
+  transform: translateX(-100px) scale(.95);
+  transition: 1s ease;
+}
+
+.c-item4{
+  transform: translateX(100px) scale(.95);
+  transition: 1s ease;
+}
+
+.c-item5{
+  transform: translateX(-100px) scale(.95);
+  transition: 1s ease;
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0px) scale(1);
 }
