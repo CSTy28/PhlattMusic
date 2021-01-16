@@ -47,7 +47,7 @@ app.post('/send', (req, res) => {
           <li>Message: ${req.body.message}</li>
         </ul>`
   };
-  sgMail.send(msg).then(() => {
+  sgMail.send(msg).then(() =>  {
     console.log('Message sent')
   }).catch((error) => {
     console.log(error.response.body)
