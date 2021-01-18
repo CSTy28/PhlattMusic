@@ -3,13 +3,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-const msg = {
+/*const msg = {
   to: "tylerthegaynair@gmail.com",
   from: "CSTyy28@gmail.com",
   subject: "Sending with SendGrid is Fun",
   text: "this is the text",
   html: "<strong>this is the text</strong>"
-};
+};*/
 /*sgMail.send(msg).then(() => {
   console.log('Message sent')
 }).catch((error) => {

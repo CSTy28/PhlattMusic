@@ -37,6 +37,7 @@ function Contact() {
                 setResult({ success: false, message: 'Something went wrong. Try again later'});
             });
     }
+    
 
 
 
