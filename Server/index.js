@@ -3,20 +3,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-/*const msg = {
-  to: "tylerthegaynair@gmail.com",
-  from: "CSTyy28@gmail.com",
-  subject: "Sending with SendGrid is Fun",
-  text: "this is the text",
-  html: "<strong>this is the text</strong>"
-};*/
-/*sgMail.send(msg).then(() => {
-  console.log('Message sent')
-}).catch((error) => {
-  console.log(error.response.body)
-  // console.log(error.response.body.errors[0].message)
-})*/
-
 
 const path = require('path');
 const express = require('express');
@@ -30,8 +16,8 @@ const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
 app.use(express.static(buildPath));
 
-app.post('/send', (req, res) => {
-  
+app.post('/', (req, res) => {
+  console.log(req.body)
   const msg = {
     to: req.body.email,
     from: "CSTyy28@gmail.com",
@@ -47,6 +33,7 @@ app.post('/send', (req, res) => {
           <li>Message: ${req.body.message}</li>
         </ul>`
   };
+
   sgMail.send(msg).then(() =>  {
     console.log('Message sent')
   }).catch((error) => {

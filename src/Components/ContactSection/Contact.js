@@ -28,7 +28,7 @@ function Contact() {
     const sendEmail = event => {
         event.preventDefault();
         axios
-            .post('/send', { ...state })
+            .post('/', { ...state })
             .then(response => {
                 setResult(response.data);
                 setState({ name: '', email: '', subject: '', message: '' });
