@@ -16,7 +16,7 @@ const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
 app.use(express.static(buildPath));
 
-app.post('phlatt.herokuapp.com/send', (req, res) => {
+app.post('/send', (req, res) => {
   console.log(req.body)
   const msg = {
     to: req.body.email,
