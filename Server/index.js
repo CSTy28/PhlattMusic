@@ -16,7 +16,7 @@ const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
 app.use(express.static(buildPath));
 
-app.post('/', (req, res) => {
+app.post('phlatt.herokuapp.com/send', (req, res) => {
   console.log(req.body)
   const msg = {
     to: req.body.email,
@@ -81,6 +81,6 @@ app.post('/', (req, res) => {
   }
 });*/
 
-app.listen(5000, () => {
-  console.log('server start on port 5000');
+app.listen(8080, () => {
+  console.log('server start on port 8080');
 });

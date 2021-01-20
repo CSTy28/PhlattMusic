@@ -28,7 +28,7 @@ function Contact() {
     const sendEmail = event => {
         event.preventDefault();
         axios
-            .post('/', { ...state })
+            .post('phlatt.herokuapp.com/send', { ...state })
             .then(response => {
                 setResult(response.data);
                 setState({ name: '', email: '', subject: '', message: '' });
