@@ -28,7 +28,52 @@ body {
   color: black;
 }
 
-/*nav animations*/ 
+/*mobile nav*/
+
+
+.toggle-button {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  width: 30px;
+  height: 21px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+
+@media (max-width: 650px){
+  .toggle-button {
+    display: flex;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    
+  }
+
+  .nav-list li {
+    margin: 5px;
+  }
+}
+
+
+/*nav animations*/
+
+.nav-list.act {
+  display: flex;
+}
+
 .navitem{
   opacity: 0;
   
@@ -295,8 +340,18 @@ img{
   overflow: hidden;
   position: relative;
   top: 25%;
-  width:60%;
+  width:70%;
   margin: 0px auto;
+}
+
+@media screen and (max-width: 650px) {
+  .c-youtube--wrapper {
+    width: 100%;
+  }
+
+  .c-youtube--section {
+    height: 80vh;
+  }
 }
 
 .c-youtube--wrapper::after {

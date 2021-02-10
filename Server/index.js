@@ -4,6 +4,7 @@ dotenv.config();
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const cors = require('cors');
 const path = require('path');
 const express = require('express');
 const transporter = require('./config');
@@ -15,6 +16,7 @@ const app = express();
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
 app.use(express.static(buildPath));
+app.use(cors());
 
 app.post('/send', (req, res) => {
   console.log(req.body)
@@ -81,6 +83,6 @@ app.post('/send', (req, res) => {
   }
 });*/
 
-app.listen(443, () => {
+app.listen(8080, () => {
   console.log('server start on port 4000');
 });
