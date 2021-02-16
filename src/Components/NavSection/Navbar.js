@@ -13,7 +13,7 @@ function Navbar() {
     
     return (
         <nav className='bobo'>
-            <a onClick={tog} href="#" className="toggle-button">
+            <a onClick={tog} className="toggle-button">
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>
